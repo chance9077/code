@@ -1,0 +1,33 @@
+<body>
+  <button>img</button>
+  <button>video</button>
+  <button>http://mlib-nginx.ismartintest.com/mlib_upload_files/20/2020/0927/21A0E8FA5A16CC4B95A3E172B5820D8E.pdf</button>
+  <script>
+    document.body.onclick = function(e) {
+      if (e.target?.tagName === 'BUTTON') {
+        // window.open(e.target.innerHTML)
+        // window.open('http://localhost:8080/' + e.target.innerHTML)
+        download(e.target.innerHTML)
+      }
+    }
+
+    function download(url) {
+      const xhr = new XMLHttpRequest()
+      xhr.responseType = 'blob'
+      xhr.open('get', url)
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          const objectUrl = URL.createObjectURL(xhr.response)
+          const link = document.createElement('a')
+          link.href = objectUrl
+          link.download = '素材'
+          link.click()
+          setTimeout(() => {
+            URL.revokeObjectURL(objectUrl) 
+          });
+        }
+      }
+      xhr.send()
+    }
+  </script>
+</body>

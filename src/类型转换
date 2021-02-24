@@ -1,0 +1,31 @@
+1、原始值转Boolean
+只有 undefined false null "" 0 -0 NaN 会转为false，其他转为true
+
+2、原始值转Number
+undefined ==> NaN
+Null ==> 0
+true ==> 1
+false ==> 0
+string ==> 是一串数字转数字，其他转NaN
+
+3、原始值转String
+undefined ==> "undefined"
+null ==> "null"
+true ==> "true"
+false ==> "false"
+NaN ==> "NaN"
+
+4、Object转字符串和数字
+1、转字符串：toString() 如果返回原始值 String(value)，否则调用valueOf，否则error
+2、转数字：valueOf(), toString()
+
+==相等
+null == undefined  true
+undefined == null  true
+下面都转为number类型判断
+number == string
+string == number
+boolean == any
+any == boolean
+有对象存在对象进行toPrimitive操作
+
