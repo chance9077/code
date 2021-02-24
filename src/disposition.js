@@ -4,7 +4,7 @@ const fs = require('fs')
 const server = http.createServer((req, res) => {
   res.statusCode = 200
   res.setHeader('Access-Control-Allow-Origin', '*')
-  if (req.url === '/download') {
+  if (req.url === '/download.pdf') {
     res.setHeader('Content-Type', 'application/pdf')
     res.setHeader('Content-Disposition', 'attachment')
     fs.readFile('./file.pdf', (err, data) => res.end(data))
