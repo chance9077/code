@@ -1,5 +1,9 @@
 <script>
-	const a = new Array(1000000).fill(0)
-	const b = new Array(1000000).fill(1.1)
-	const c = new Array(1000000).fill('a')
+	// const a = new Array(1000000).fill(0)
+	// const b = new Array(1000000).fill(1.1)
+	// const c = new Array(1000000).fill('a')
+	window.addEventListener('unload', e => {
+		e.preventDefault()
+		e.returnValue = '确认？'
+	})
 </script>

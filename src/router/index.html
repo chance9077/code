@@ -1,0 +1,19 @@
+<body>
+  <input type="text">
+  <button onclick="send()">send</button>
+  <div class="msg">
+
+  </div>
+</body>
+<script>
+  document.addEventListener('click', {
+    handleEvent: function(e) {
+      e.preventDefault()
+      console.log(e)
+    }},
+    {
+      capture: false,
+      once: true
+    }
+  )
+</script>
