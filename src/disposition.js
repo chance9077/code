@@ -2,6 +2,7 @@ const http = require('http')
 const fs = require('fs')
 
 const server = http.createServer((req, res) => {
+  console.log(req.headers, req.rawHeaders)
   res.statusCode = 200
   res.setHeader('Access-Control-Allow-Origin', '*')
   if (req.url === '/download.pdf') {
